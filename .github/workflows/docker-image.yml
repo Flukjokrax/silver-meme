@@ -10,9 +10,8 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
-
+    runs-on: docker push catro922/kali-linux-docker-main:tagname
     steps:
     - uses: actions/checkout@v4
-    - name: https://hub.docker.com/repositories/catro922
+    - name: docker push catro922/kali-linux-docker-main:tagname
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
